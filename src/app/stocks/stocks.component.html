@@ -1,0 +1,15 @@
+<div  style="margin-top: 3px; border: 1px solid oldlace">
+  <h4>Stock Quotes   (NASDAQ only)</h4>
+  <input [(ngModel)]="symbol" (keyup.enter)="makeRequest()"><br/><br/>
+  <button type="button" (click)="makeRequest()" style="background-color: deeppink; color: white; height: 3vh; font-size: 1.75vh; margin-bottom: 5px;">Make Request</button>
+  <div *ngIf="loaded" id="quote-details" style="color: blue;" >
+    <label style="background-color: lightyellow; margin-right: 5px">Symbol:</label><span id="sym">{{name}}</span><br/>
+    <label style="background-color: lightyellow; margin-right: 5px">Name:</label><span id="company-name">{{name}}</span><br/>
+    <label style="background-color: lightyellow; margin-right: 5px">Last:</label>{{last}}<br/>
+    <label style="background-color: lightyellow; margin-right: 5px">Change:</label>{{change}}<br/>
+    <label style="background-color: lightyellow; margin-right: 5px">Percent Change:</label>{{percentChange}}<br/>
+    <label style="background-color: lightyellow; margin-right: 5px">Last Trade:</label>{{lastTrade}}<br/><br/>
+    <label style="background-color: lightyellow; margin-right: 5px">Raw</label>
+  </div>
+</div>
+<pre style="margin-top: 2px; color: indianred">{{data | json}}</pre>
