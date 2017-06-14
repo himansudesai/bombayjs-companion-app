@@ -46,7 +46,8 @@ export class StocksComponent {
    makeRequest(): void {
     console.log('BUTTON!');
     if (this.symbol) {
-      var endpoint = 'http://finance.google.com/finance/info?client=ig&q=NASDAQ%3A';
+      // var endpoint = 'http://finance.google.com/finance/info?client=ig&q=NASDAQ%3A';
+      var endpoint = (<any>window).endpoints.getStocksEndpoint() + '&q=NASDAQ%3A';
       this.http.request(endpoint + this.symbol)
         .subscribe((res: Response) => {
           const rawText = res.text();
