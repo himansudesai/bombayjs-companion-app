@@ -1,6 +1,6 @@
-console.log('++hdd++ endpoints.js');
+console.log('++hdd++ test endpoints.js');
 window.endpoints = {
     getStocksEndpoint: function() {
-        return 'http://localhost:';
+        return 'http://localhost:3039/finance/info?client=ig';
     }
 }
