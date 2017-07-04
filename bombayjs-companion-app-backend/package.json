@@ -1,0 +1,11 @@
+{
+  "name": "bombayjs-companion-app-backend",
+  "version": "1.0.0",
+  "description": "Backend to serve up bombayjs-companion-app",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.74.0"
+  }
+}
