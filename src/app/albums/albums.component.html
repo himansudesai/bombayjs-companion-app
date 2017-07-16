@@ -1,0 +1,12 @@
+<h1>Albums Component</h1>
+
+<h4>Svc Num Albums = {{aSvc.numAlbums}}</h4>
+<h4>Svc Num Rows = {{aSvc.numRows}}</h4>
+
+<div class="albums-table">
+  <div *ngFor="let row of rows" class="albums-row">
+    <div *ngFor="let album of row" class="album-cell">
+        <album-comp [album]="album"></album-comp>
+    </div>
+  </div>
+</div>

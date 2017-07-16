@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import { StockQuote } from './stockquote';
+import { Router } from '@angular/router';
+
+/*
+export class AppComponent {
+  router: Router;
+  constructor(router: Router) {
+    (<any>console).log('\n\n++hdd++ constructor of app component');
+*/
+
 
 @Component({
   selector: 'stocks',
   templateUrl: './stocks.component.html',
   styleUrls: ['./stocks.component.css']
 })
-export class StocksComponent {
+export class StocksComponent implements OnInit {
+  router: Router;
   data: StockQuote;
   loading: boolean;
   symbol: Object;
@@ -18,8 +28,13 @@ export class StocksComponent {
   loaded: boolean;
   lastTrade: string;
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+    (<any>console).log("++hdd++ StocksComponent constructor");
+  }
 
+  ngOnInit() {
+    (<any>console).log('\n\n++hdd++\n\n');
+  }
 /*
 // [
 {
@@ -46,7 +61,7 @@ export class StocksComponent {
    makeRequest(): void {
     console.log('BUTTON!');
     if (this.symbol) {
-      var endpoint = (<any>window).endpoints.getStocksEndpoint() + '&q=NASDAQ%3A';
+      var endpoint = '/finance/info?client=ig&q=NASDAQ%3A';
       this.http.get(endpoint + this.symbol)
         .subscribe((res: Response) => {
           const rawText = res.text();

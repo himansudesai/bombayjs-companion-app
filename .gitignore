@@ -30,6 +30,7 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+bombayjs-companion-app-backend/node_modules
 
 # Optional npm cache directory
 .npm

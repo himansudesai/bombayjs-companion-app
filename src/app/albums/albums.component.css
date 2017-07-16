@@ -1,0 +1,15 @@
+.albums-table {
+  display: table;
+  width: 100%;
+}
+
+.albums-row {
+  display: table-row;
+}
+
+.album-cell {
+  display: table-cell;
+  border: 1px solid #EFEFEF;
+  padding: 5px;
+  width: 10%;
+}
