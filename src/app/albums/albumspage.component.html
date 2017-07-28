@@ -1,1 +1,9 @@
-<albums [numAlbums]="aSvc.numAlbums" [numRows]="aSvc.numRows"></albums>
+<br/>
+<div class="form-group">
+  <label>Band</label>&nbsp;
+  <select class="form-control" id="band" [(ngModel)]="selectedBand.band" (change)="bandSelected($event.target)">
+    <option *ngFor="let band of bands" [ngValue]="band">{{band}}</option>
+  </select>
+</div>
+
+<albums [band]="selectedBand.band" [numAlbums]="aSvc.numAlbums" [numRows]="aSvc.numRows"></albums>

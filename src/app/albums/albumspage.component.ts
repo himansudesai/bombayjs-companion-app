@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
@@ -14,16 +14,20 @@ import { AlbumsComponent } from './albums.component';
   styleUrls: ['./albumspage.component.css']
 })
 
-export class AlbumsPageComponent implements OnChanges, OnInit {
-
-  constructor(private http: Http, private aSvc: AlbumService, private rr: ActivatedRoute) {}
-
-  ngOnInit() {
-    (<any>console).log('++hdd++ AlbumsPageComponent ngOnInit');
+export class AlbumsPageComponent {
+  public bands: Object[] = ['Beatles', 'Rolling Stones', 'Bangles', 'Pink Floyd', 'U2', 'Supremes', 'Destinys Child', 'Backstreet Boys', 'Police'];
+  public selectedBand = {
+    band: ''
   }
 
-  ngOnChanges() {
-    (<any>console).log('++hdd++ AlbumsPageComponent ngOnChanges');
+  constructor(private http: Http, private aSvc: AlbumService, private rr: ActivatedRoute) {
+    this.selectedBand.band = this.aSvc.band;
+    this.aSvc.setActivePage('albums');
+  }
+
+  bandSelected(val) {
+    this.aSvc.setBand(this.selectedBand.band);
   }
 
 }
+

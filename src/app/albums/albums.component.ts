@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
@@ -14,7 +14,8 @@ import { AlbumService } from './album.service';
   selector: 'albums'
 })
 
-export class AlbumsComponent implements OnChanges, OnInit {
+export class AlbumsComponent implements OnChanges {
+  @Input() band: string;
   @Input() numRows: number;
   @Input() numAlbums: number;
 
@@ -23,16 +24,11 @@ export class AlbumsComponent implements OnChanges, OnInit {
 
   constructor(private http: Http, private aSvc: AlbumService, private rr: ActivatedRoute) {}
 
-  ngOnInit() {
-    (<any>console).log('++hdd++ AlbumsComponent ngOnInit');
-  }
-
   ngOnChanges() {
-    (<any>console).log('++hdd++ AlbumsComponent ngOnChanges');
     this.numAlbums = (this.numAlbums < 1) ? 1 : this.numAlbums;
     this.numRows = (this.numRows < 1) ? 1 : this.numRows;
 
-    const p: Promise<any> = this.http.get(`/albums?term=the+beatles&entity=album&limit=${this.numAlbums}`).toPromise();    
+    const p: Promise<any> = this.http.get(`/albums?term=${this.band}&entity=album&limit=${this.numAlbums}`).toPromise();    
     p.then( (res) => {
       const resJson = res.json();
       this.albums = resJson.results;

@@ -1,22 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import { StockQuote } from './stockquote';
 import { Router } from '@angular/router';
-
-/*
-export class AppComponent {
-  router: Router;
-  constructor(router: Router) {
-    (<any>console).log('\n\n++hdd++ constructor of app component');
-*/
-
+import { AlbumService } from '../albums/album.service';
 
 @Component({
   selector: 'stocks',
   templateUrl: './stocks.component.html',
   styleUrls: ['./stocks.component.css']
 })
-export class StocksComponent implements OnInit {
+export class StocksComponent {
   router: Router;
   data: StockQuote;
   loading: boolean;
@@ -28,13 +21,10 @@ export class StocksComponent implements OnInit {
   loaded: boolean;
   lastTrade: string;
 
-  constructor(private http: Http) {
-    (<any>console).log("++hdd++ StocksComponent constructor");
+  constructor(private http: Http, private svc: AlbumService) {
+        this.svc.setActivePage('stocks');
   }
 
-  ngOnInit() {
-    (<any>console).log('\n\n++hdd++\n\n');
-  }
 /*
 // [
 {
@@ -59,7 +49,6 @@ export class StocksComponent implements OnInit {
 */
 
    makeRequest(): void {
-    console.log('BUTTON!');
     if (this.symbol) {
       var endpoint = '/finance/info?client=ig&q=NASDAQ%3A';
       this.http.get(endpoint + this.symbol)
