@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlbumService } from './albums/album.service';
+import { Store } from './services/store.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   router: Router;
-  title = 'app works!';
 
-  constructor(private svc: AlbumService) {}
+  constructor(private store: Store) {}
 
   ngOnInit() {}
 }

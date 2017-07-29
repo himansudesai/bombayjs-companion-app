@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import { StockQuote } from './stockquote';
+import { Store } from '../services/store.service';
 import { Router } from '@angular/router';
-import { AlbumService } from '../albums/album.service';
 
 @Component({
   selector: 'stocks',
@@ -21,8 +21,8 @@ export class StocksComponent {
   loaded: boolean;
   lastTrade: string;
 
-  constructor(private http: Http, private svc: AlbumService) {
-        this.svc.setActivePage('stocks');
+  constructor(private http: Http, private store: Store) {
+        this.store.setActivePage('stocks');
   }
 
 /*

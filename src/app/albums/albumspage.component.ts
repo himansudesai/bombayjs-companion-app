@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import { Album } from './album.interface';
-import { AlbumService } from './album.service';
+import { Store } from '../services/store.service';
 import { AlbumsComponent } from './albums.component';
 
 
@@ -19,14 +19,22 @@ export class AlbumsPageComponent {
   public selectedBand = {
     band: ''
   }
+  private numAlbums;
+  private numRows;
 
-  constructor(private http: Http, private aSvc: AlbumService, private rr: ActivatedRoute) {
-    this.selectedBand.band = this.aSvc.band;
-    this.aSvc.setActivePage('albums');
+  constructor(private http: Http, private store: Store, private rr: ActivatedRoute) {
+    this.selectedBand.band = this.store.band;
+    this.numAlbums = this.store.numAlbums;
+    this.numRows = this.store.numRows;
+    this.store.setActivePage('albums');
   }
 
   bandSelected(val) {
-    this.aSvc.setBand(this.selectedBand.band);
+    this.store.setBand(this.selectedBand.band);
+  }
+
+  showStats() {
+    alert(`num albums/rows/band = ${this.numAlbums} / ${this.numRows} / ${this.selectedBand.band}`);
   }
 
 }

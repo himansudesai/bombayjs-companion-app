@@ -1,9 +1,20 @@
 <br/>
 <div class="form-group">
-  <label>Band</label>&nbsp;
+  <label>Band</label>
+  <span class="spacer"></span>
   <select class="form-control" id="band" [(ngModel)]="selectedBand.band" (change)="bandSelected($event.target)">
     <option *ngFor="let band of bands" [ngValue]="band">{{band}}</option>
   </select>
+  <span class="spacer"></span>
+  <span class="spacer"></span>
+  <label>Albums</label>
+  <span class="spacer"></span>
+  <input [(ngModel)]="numAlbums">
+  <span class="spacer"></span>
+  <span class="spacer"></span>
+  <label>Rows</label>
+  <span class="spacer"></span>
+  <input [(ngModel)]="numRows">
 </div>
 
-<albums [band]="selectedBand.band" [numAlbums]="aSvc.numAlbums" [numRows]="aSvc.numRows"></albums>
+<albums [band]="selectedBand.band" [numAlbums]="numAlbums" [numRows]="numRows"></albums>

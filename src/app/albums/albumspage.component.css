@@ -3,3 +3,6 @@
   height: 30px;
   display: inline-block;
 }
+.spacer {
+  margin-left: 6px;
+}

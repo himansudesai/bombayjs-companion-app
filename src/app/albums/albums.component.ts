@@ -1,12 +1,10 @@
 import { Component, OnChanges, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import { Album } from './album.interface';
-import { AlbumService } from './album.service';
-
+import { Store } from '../services/store.service';
 
 @Component({
   templateUrl: './albums.component.html',
@@ -22,7 +20,7 @@ export class AlbumsComponent implements OnChanges {
   albums: Array<Album>;
   rows: Array<Album>;
 
-  constructor(private http: Http, private aSvc: AlbumService, private rr: ActivatedRoute) {}
+  constructor(private http: Http, store: Store) {}
 
   ngOnChanges() {
     this.numAlbums = (this.numAlbums < 1) ? 1 : this.numAlbums;

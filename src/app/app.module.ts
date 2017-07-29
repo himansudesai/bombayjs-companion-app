@@ -9,7 +9,7 @@ import { StocksComponent } from './stocks/stocks.component';
 import { AlbumsPageComponent } from './albums/albumspage.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { AlbumComponent } from './albums/album/album.component';
-import { AlbumService } from './albums/album.service';
+import { Store } from './services/store.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { AlbumService } from './albums/album.service';
       { path: '', redirectTo: 'stocks', pathMatch: 'full' }
     ], {useHash: true})
   ],
-  providers: [AlbumService],
+  providers: [Store],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
