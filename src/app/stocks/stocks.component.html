@@ -1,5 +1,5 @@
 <div  style="margin-top: 3px; border: 1px solid oldlace">
-  <h4>Stock Quotes   (NASDAQ only)</h4>
+  <h4>Stock Quotes</h4>
   <input [(ngModel)]="symbol" (keyup.enter)="makeRequest()"><br/><br/>
   <button type="button" class="btn btn-danger" id="get-stock-quote" (click)="makeRequest()">Make Request</button>
   <div *ngIf="loaded" id="quote-details" style="color: #337ab7;" >

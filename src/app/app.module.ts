@@ -9,6 +9,7 @@ import { StocksComponent } from './stocks/stocks.component';
 import { AlbumsPageComponent } from './albums/albumspage.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { AlbumComponent } from './albums/album/album.component';
+import { SettingsComponent } from './settings/settings.component';
 import { Store } from './services/store.service';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { Store } from './services/store.service';
     StocksComponent,
     AlbumsPageComponent,
     AlbumsComponent,
-    AlbumComponent
+    AlbumComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import { Store } from './services/store.service';
     RouterModule.forRoot([
       { path: 'stocks', component: StocksComponent },
       { path: 'albums', component: AlbumsPageComponent },
+      { path: 'settings', component: SettingsComponent },
       { path: '', redirectTo: 'stocks', pathMatch: 'full' }
     ], {useHash: true})
   ],

@@ -15,26 +15,24 @@ import { AlbumsComponent } from './albums.component';
 })
 
 export class AlbumsPageComponent {
-  public bands: Object[] = ['Beatles', 'Rolling Stones', 'Bangles', 'Pink Floyd', 'U2', 'Supremes', 'Destinys Child', 'Backstreet Boys', 'Police'];
-  public selectedBand = {
-    band: ''
-  }
-  private numAlbums;
-  private numRows;
+  private selectedBand = '';
+  private albums;
+  private rows;
 
   constructor(private http: Http, private store: Store, private rr: ActivatedRoute) {
-    this.selectedBand.band = this.store.band;
-    this.numAlbums = this.store.numAlbums;
-    this.numRows = this.store.numRows;
+    this.selectedBand = this.store.band;
+    this.fetchStoreSettings(this.selectedBand);
     this.store.setActivePage('albums');
   }
 
   bandSelected(val) {
-    this.store.setBand(this.selectedBand.band);
+    this.store.setBand(this.selectedBand);
+    this.fetchStoreSettings(this.selectedBand);
   }
 
-  showStats() {
-    alert(`num albums/rows/band = ${this.numAlbums} / ${this.numRows} / ${this.selectedBand.band}`);
+  private fetchStoreSettings(band) {
+    this.albums = this.store.settings[band].albums;
+    this.rows = this.store.settings[band].rows;    
   }
 
 }
