@@ -1,0 +1,33 @@
+.band, .selected-band {
+  list-style: none;
+  font-size: initial;
+  cursor: pointer;
+}
+.selected-band {
+  color: #337ab7;
+  font-weight: bold;
+}
+.settings-table-column {
+  display: table-cell;
+  width: 25vw;
+  border: 1px solid #e0d9d9;
+}
+#settings-page-padding {
+  padding: 5px;
+  padding-left: 15px;
+}
+#button-panel {
+  margin-top: 20px;
+}
+#bands-list {
+  padding-left: 10px;
+}
+input {
+  width: 72%;
+}
+label {
+  width: 25%;
+}
+#settings-detail {
+  padding-left: 10px;
+}

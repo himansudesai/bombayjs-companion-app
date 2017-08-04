@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class Store {
   private numAlbums: number = 12;
   private numRows: number = 4;
-  public band: string = 'Beatles';
+  public band: string = 'U2';
   public bands: Object[] = ['Beatles', 'Rolling Stones', 'Bangles', 'Pink Floyd', 'U2', 'Supremes', 'Destinys Child', 'Backstreet Boys', 'Police'];
   public settings: Object = {
     Beatles: {albums: this.numAlbums, rows: this.numRows},
@@ -16,6 +16,7 @@ export class Store {
     "Backstreet Boys": {albums: this.numAlbums, rows: this.numRows},
     Police: {albums: this.numAlbums, rows: this.numRows}
   };
+  
   private links: Object = {
     stocks: true,
     albums: false,

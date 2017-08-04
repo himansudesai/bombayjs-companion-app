@@ -1,1 +1,25 @@
-<h1>Settings Page<h1>
+<div id="settings-page-padding">
+  <h4>Settings</h4>
+  <div id="settings-table">
+    <div class="settings-table-column">
+      <ul id="bands-list">
+        <li *ngFor="let band of bands; let i = index" [ngClass]="{'selected-band': isSelected(band), 'band': !isSelected(band)}" (click)="bandSelected(band)">{{band}}</li>
+      </ul>
+    </div>
+    <div class="settings-table-column">
+      <div *ngIf="selectedBand" id="settings-detail">
+        <label>Albums</label>
+        <input [(ngModel)]="settings[this.selectedBand].albums">
+        <br/>
+        <label>Rows</label>
+        <input [(ngModel)]="settings[this.selectedBand].rows">
+      </div>
+    </div>
+  </div>
+  <ul class="nav nav-pills" style="padding: 4px; font-size: initial" id="button-panel">
+    <button type="button" class="btn btn-danger" (click)="applyNewSettings($event)">Update</button>
+    <!-- <li [ngClass]="{'active': true}"><a href="#" (click)="applyChanges($event)">Update</a></li> -->
+    <button type="button" class="btn btn-danger" (click)="cancelChanges($event)">Cancel</button>
+    <!-- <li ><a href="#" (click)="cancelChanges($event)">Cancel</a></li> -->
+  </ul>
+</div>
