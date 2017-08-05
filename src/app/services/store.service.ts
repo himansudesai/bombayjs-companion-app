@@ -4,18 +4,18 @@ import { Injectable } from '@angular/core';
 export class Store {
   private numAlbums: number = 12;
   private numRows: number = 4;
-  public band: string = 'U2';
-  public bands: Object[] = ['Beatles', 'Rolling Stones', 'Bangles', 'Pink Floyd', 'U2', 'Supremes', 'Destinys Child', 'Backstreet Boys', 'Police'];
-  public settings: Object = {
-    Beatles: {albums: this.numAlbums, rows: this.numRows},
-    "Rolling Stones": {albums: this.numAlbums, rows: this.numRows},
-    Bangles: {albums: this.numAlbums, rows: this.numRows},
-    U2: {albums: this.numAlbums, rows: this.numRows},
-    Supremes: {albums: this.numAlbums, rows: this.numRows},
-    "Destinys Child": {albums: this.numAlbums, rows: this.numRows},
-    "Backstreet Boys": {albums: this.numAlbums, rows: this.numRows},
-    Police: {albums: this.numAlbums, rows: this.numRows}
-  };
+  public bands: string[] = ['Beatles', 'Rolling Stones', 'Bangles', 'Pink Floyd', 'U2', 'Supremes', 'Destinys Child', 'Backstreet Boys', 'Police'];
+  public band: string = this.bands[0];
+  public settings: Object = {};
+
+  constructor() {
+    for (let i=0; i<this.bands.length; i++) {
+      this.settings[this.bands[i]] = {
+        albums: this.numAlbums,
+        rows: this.numRows
+      };
+    }
+  }
   
   private links: Object = {
     stocks: true,
