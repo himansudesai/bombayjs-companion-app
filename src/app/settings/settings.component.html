@@ -9,15 +9,15 @@
     <div class="settings-table-column">
       <div *ngIf="selectedBand" id="settings-detail">
         <label>Albums</label>
-        <input [(ngModel)]="settings[this.selectedBand].albums">
+        <input id="num-albums" [(ngModel)]="settings[this.selectedBand].albums">
         <br/>
         <label>Rows</label>
-        <input [(ngModel)]="settings[this.selectedBand].rows">
+        <input id="num-rows" [(ngModel)]="settings[this.selectedBand].rows">
       </div>
     </div>
   </div>
   <ul class="nav nav-pills" style="padding: 4px; font-size: initial" id="button-panel">
-    <button type="button" class="btn btn-danger" (click)="applyNewSettings($event)">Update</button>
-    <button type="button" class="btn btn-danger" (click)="cancelChanges($event)">Cancel</button>
+    <button type="button" id="update-button" class="btn btn-danger" (click)="applyNewSettings($event)">Update</button>
+    <button type="button" id="cancel-button" class="btn btn-danger" (click)="cancelChanges($event)">Cancel</button>
   </ul>
 </div>
