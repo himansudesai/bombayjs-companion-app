@@ -9,12 +9,12 @@
   <span class="spacer"></span>
   <label>Albums</label>
   <span class="spacer"></span>
-  <input [(ngModel)]="albums">
+  <input id="albums-inp" [(ngModel)]="albums">
   <span class="spacer"></span>
   <span class="spacer"></span>
   <label>Rows</label>
   <span class="spacer"></span>
-  <input [(ngModel)]="rows">
+  <input id="rows-inp" [(ngModel)]="rows">
 </div>
 
 <albums [band]="selectedBand" [numAlbums]="albums" [numRows]="rows"></albums>
