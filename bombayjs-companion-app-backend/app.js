@@ -41,5 +41,5 @@ function appStartedInTestMode() {
 function switchToTesUrls() {
   const BOMBAYJS_URL = 'http://localhost:3039/';
   stocksUrl = BOMBAYJS_URL + 'finance';
-  albumsUrl = BOMBAYJS_URL;
+  albumsUrl = BOMBAYJS_URL + 'albums';
 }
