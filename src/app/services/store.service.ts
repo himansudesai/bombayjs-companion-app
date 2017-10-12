@@ -18,7 +18,7 @@ export class Store {
   }
   
   private links: Object = {
-    stocks: true,
+    jokes: true,
     albums: false,
     settings: false
   };

@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { StocksComponent } from './stocks/stocks.component';
+import { JokesComponent } from './jokes/jokes.component';
 import { AlbumsPageComponent } from './albums/albumspage.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { AlbumComponent } from './albums/album/album.component';
@@ -15,7 +15,7 @@ import { Store } from './services/store.service';
 @NgModule({
   declarations: [
     AppComponent,
-    StocksComponent,
+    JokesComponent,
     AlbumsPageComponent,
     AlbumsComponent,
     AlbumComponent,
@@ -26,10 +26,10 @@ import { Store } from './services/store.service';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: 'stocks', component: StocksComponent },
+      { path: 'jokes', component: JokesComponent },
       { path: 'albums', component: AlbumsPageComponent },
       { path: 'settings', component: SettingsComponent },
-      { path: '', redirectTo: 'stocks', pathMatch: 'full' }
+      { path: '', redirectTo: 'jokes', pathMatch: 'full' }
     ], {useHash: true})
   ],
   providers: [Store],

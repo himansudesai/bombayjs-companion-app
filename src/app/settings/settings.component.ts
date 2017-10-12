@@ -13,6 +13,8 @@ export class SettingsComponent {
   private bands: Array<string> = [];
   private settings: Object = {};
   private selectedBand: string = undefined;
+  private postParam = 'hello';
+  private postResults: Object;
 
   constructor(private http: Http, private store: Store, private router: Router) {
     this.store.setActivePage('settings');
@@ -22,6 +24,25 @@ export class SettingsComponent {
 
   copySettingsFromStore() {
     this.copySettings(this.store.settings, this.settings);
+  }
+
+  doPost() {
+    console.log('++hdd++ Posting...');
+    this.http.post('/post', {greeting: this.postParam})
+      .subscribe((res: Response) => {
+        const rawText = res.text();
+        console.log('YAY YAY - got data ' + rawText);
+        var respObj = JSON.parse(rawText);
+        this.postResults = {
+          headers: {
+            Origin: respObj.headers.Origin,
+            "User-Agent": respObj.headers["User-Agent"]
+          },
+          json: respObj.json,
+          origin: respObj.origin,
+          url: respObj.url
+        };
+      });
   }
 
   applyNewSettings() {

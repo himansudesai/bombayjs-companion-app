@@ -1,0 +1,17 @@
+<div  id="jokes-page">  
+  <div id="page-title"><span>Chuck</span><img src="assets/images/chuck_norris.jpg"><span>Norris</span>
+  </div>
+  <br/>
+  <label>Category</label>
+  <span class="spacer"></span>
+  <input [(ngModel)]="category"><br/>
+  <div *ngIf="loaded" id="quote-details" style="color: #337ab7;" >
+    {{joke}}
+    <img src="{{icon_url}}" />
+  </div>
+  <br/>
+  <button type="button" class="btn btn-danger" id="get-stock-quote" (click)="makeRequest()">Get Joke</button>
+  <br/>
+</div>
+<br/>
+<pre>{{rawData | json}}</pre>

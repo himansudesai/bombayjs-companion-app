@@ -1,0 +1,36 @@
+#jokes-page {
+  margin-top: 3px;
+  border: 1px solid oldlace;
+  margin-left: 5px;
+}
+.spacer {
+  margin-left: 6px;
+}
+#page-title {
+  padding-top: 20px;
+}
+#page-title img {
+  width: 150px;
+  margin: 10px;
+}
+#page-title span {
+  font-size: 32px;
+}
+pre {
+  height: 200px;
+}
+p {
+  font-style: italic;
+  color: grey;
+}
+#quote-details {
+  font-size: large;
+}
+#temp {
+  color: #C45953;
+}
+pre {
+  margin-top: 2px;
+  margin-left: 5px;
+  color: #e9635f;
+}

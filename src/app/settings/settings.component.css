@@ -12,7 +12,7 @@
   width: 25vw;
   border: 1px solid #e0d9d9;
 }
-#settings-page-padding {
+#settings-page-padding, #post-example {
   padding: 5px;
   padding-left: 15px;
 }
@@ -31,4 +31,18 @@ label {
 #settings-detail {
   padding-left: 10px;
   margin-top: 7px;
+}
+#button-panel {
+  padding: 4px;
+  font-size: initial
+}
+#post-example label {
+  width: 10%;
+}
+#post-example input {
+  width: 20%;
+}
+#post-example pre {
+  margin-top: 2px;
+  color: #e9635f;
 }
