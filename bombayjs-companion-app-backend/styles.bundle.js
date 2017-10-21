@@ -1,21 +1,6 @@
 webpackJsonp([2,4],{
 
-/***/ 152:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(16)();
-// imports
-
-
-// module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 16:
+/***/ 12:
 /***/ (function(module, exports) {
 
 /*
@@ -72,7 +57,22 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 192:
+/***/ 153:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(12)();
+// imports
+
+
+// module
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 195:
 /***/ (function(module, exports) {
 
 /*
@@ -325,7 +325,7 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 196:
+/***/ 199:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(89);
@@ -339,10 +339,10 @@ module.exports = __webpack_require__(89);
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(152);
+var content = __webpack_require__(153);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(192)(content, {});
+var update = __webpack_require__(195)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -360,5 +360,5 @@ if(false) {
 
 /***/ })
 
-},[196]);
+},[199]);
 //# sourceMappingURL=styles.bundle.js.map

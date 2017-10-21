@@ -5,12 +5,12 @@
   <label>Category</label>
   <span class="spacer"></span>
   <input [(ngModel)]="category"><br/>
-  <div *ngIf="loaded" id="quote-details" style="color: #337ab7;" >
+  <div *ngIf="loaded" id="joke" style="color: #337ab7;" >
     {{joke}}
-    <img src="{{icon_url}}" />
+    <!-- <img src="{{icon_url}}" /> -->
   </div>
   <br/>
-  <button type="button" class="btn btn-danger" id="get-stock-quote" (click)="makeRequest()">Get Joke</button>
+  <button type="button" class="btn btn-danger" id="get-jokes" (click)="makeRequest()">Get Joke</button>
   <br/>
 </div>
 <br/>

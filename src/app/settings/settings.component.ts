@@ -13,7 +13,7 @@ export class SettingsComponent {
   private bands: Array<string> = [];
   private settings: Object = {};
   private selectedBand: string = undefined;
-  private postParam = 'hello';
+  private postParam;
   private postResults: Object;
 
   constructor(private http: Http, private store: Store, private router: Router) {
@@ -27,11 +27,9 @@ export class SettingsComponent {
   }
 
   doPost() {
-    console.log('++hdd++ Posting...');
-    this.http.post('/post', {greeting: this.postParam})
+    this.http.post('/postit', {greeting: this.postParam})
       .subscribe((res: Response) => {
         const rawText = res.text();
-        console.log('YAY YAY - got data ' + rawText);
         var respObj = JSON.parse(rawText);
         this.postResults = {
           headers: {
