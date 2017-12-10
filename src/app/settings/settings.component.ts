@@ -31,6 +31,8 @@ export class SettingsComponent {
       .subscribe((res: Response) => {
         const rawText = res.text();
         var respObj = JSON.parse(rawText);
+        this.postResults = respObj;
+        /*
         this.postResults = {
           headers: {
             Origin: respObj.headers.Origin,
@@ -40,6 +42,7 @@ export class SettingsComponent {
           origin: respObj.origin,
           url: respObj.url
         };
+        */
       });
   }
 

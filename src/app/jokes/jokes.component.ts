@@ -32,9 +32,7 @@ export class JokesComponent {
 
       this.http.get(endpoint)
         .subscribe((res: Response) => {
-          console.log('@@@@ got resonse ' + res);
           const rawText = res.text();
-          console.log('@@@@ text = ' + rawText);
           this.rawData = JSON.parse(rawText);
           if (this.rawData && this.rawData['total'] > 0) {
             this.joke = this.rawData['result'][0].value;
