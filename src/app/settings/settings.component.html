@@ -17,7 +17,7 @@
     </div>
   </div>
   <ul class="nav nav-pills" id="button-panel">
-    <button type="button" id="update-button" class="btn btn-danger" (click)="applyNewSettings($event)">Update</button>
+    <button type="button" id="update-button" class="btn btn-danger" (click)="applyNewSettings()">Update</button>
     <button type="button" id="cancel-button" class="btn btn-danger" (click)="cancelChanges($event)">Cancel</button>
   </ul>
 </div>
@@ -27,6 +27,6 @@
   <h4>Post Example</h4>
   <label>greeting</label>
   <input id="post-param" [(ngModel)]="postParam">&nbsp;&nbsp;
-  <button type="button" id="post-button" class="btn btn-danger" (click)="doPost($event)">Post</button><br/>
+  <button type="button" id="post-button" class="btn btn-danger" (click)="doPost()">Post</button><br/>
   <pre>{{postResults | json}}</pre>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgForOf } from '@angular/common';
 import {Http, Response} from '@angular/http';
 import { Store } from '../services/store.service';
 import { Router } from '@angular/router';
@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent {
-  private bands: Array<string> = [];
+  public bands: Array<string> = [];
   private settings: Object = {};
-  private selectedBand: string = undefined;
-  private postParam;
-  private postResults: Object;
+  public selectedBand: string = undefined;
+  public postParam;
+  public postResults: Object;
 
   constructor(private http: Http, private store: Store, private router: Router) {
     this.store.setActivePage('settings');

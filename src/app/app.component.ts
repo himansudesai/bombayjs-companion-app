@@ -10,7 +10,7 @@ import { Store } from './services/store.service'
 export class AppComponent {
   router: Router;
 
-  constructor(private store: Store) {}
+  constructor(public store: Store) {}
 
   ngOnInit() {}
 }

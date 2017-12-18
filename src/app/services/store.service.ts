@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 
+interface PageActiveStatus {
+  jokes: boolean;
+  albums: boolean;
+  settings: boolean;
+}
+
 @Injectable()
 export class Store {
   private numAlbums: number = 12;
@@ -17,7 +23,7 @@ export class Store {
     }
   }
   
-  private links: Object = {
+  public activePages: PageActiveStatus = {
     jokes: true,
     albums: false,
     settings: false
@@ -28,11 +34,10 @@ export class Store {
   }
 
   public setActivePage(page: string) {
-    const ob: Object = this.links;
-    for (const page in this.links) {
-      this.links[page] = false;
+    for (const page in this.activePages) {
+      this.activePages[page] = false;
     }
-    this.links[page] = true;
+    this.activePages[page] = true;
   }
 
 }

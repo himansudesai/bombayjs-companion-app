@@ -15,11 +15,11 @@ import { AlbumsComponent } from './albums.component';
 })
 
 export class AlbumsPageComponent {
-  private selectedBand = '';
-  private albums;
-  private rows;
+  public selectedBand = '';
+  public albums;
+  public rows;
 
-  constructor(private http: Http, private store: Store, private rr: ActivatedRoute) {
+  constructor(private http: Http, public store: Store, private rr: ActivatedRoute) {
     this.selectedBand = this.store.band;
     this.fetchStoreSettings(this.selectedBand);
     this.store.setActivePage('albums');

@@ -1,9 +1,9 @@
 <div id="app">
     <div id="top-nav">
         <ul class="nav nav-pills">
-            <li [ngClass]="{'active': store.links.jokes}"><a href="#/jokes">Jokes</a></li>
-            <li [ngClass]="{'active': store.links.albums}"><a href="#/albums">Albums</a></li>
-            <li [ngClass]="{'active': store.links.settings}"><a href="#/settings">Settings</a></li>
+            <li [ngClass]="{'active': store.activePages.jokes}"><a href="#/jokes">Jokes</a></li>
+            <li [ngClass]="{'active': store.activePages.albums}"><a href="#/albums">Albums</a></li>
+            <li [ngClass]="{'active': store.activePages.settings}"><a href="#/settings">Settings</a></li>
         </ul>
     </div>
     <router-outlet></router-outlet>
